@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    .container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.box {
+  width: 80%;
+  height: 100px;
+  border: 1px solid black;
+  background-color: rgb(155, 88, 88);
+  padding: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+.box p{
+  display:none;
+  margin-bottom: 20px;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+.box button{
+  height: 20px;
+  width: 400px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+  </style>
+</head>
+<body>
+  
+    <div class="container">
+      <div class="box">
+        <h2>HTML and CSS</h2>
+        <button>></button>
+        <p>HTML və CSS internet səhifələrinin yaradılmasında əsas rol oynayan iki dildir. HTML (Hyper Text Markup Language) internet səhifələrinin mətn, şəkil və linklərinin strukturu və tənzimlənməsi üçün istifadə olunur. CSS (Cascading Style Sheets) isə səhifənin görünüşünü tənzimləmək üçün istifadə olunur.</p>
+      </div>
+      <div class="box">
+        <h2>Javascript</h2>
+        <button>></button>
+
+        <p>JavaScript vasitəsilə, internet səhifələri həm dinamik, həm də interaktiv olur. Özəlliklərindən biri də, istifadəsi çox asandır və müxtəlif tərəflər tərəfindən geniş istifadə edilir.</p>
+      </div>
+      <div class="box">
+        <h2>Python</h2>
+        <button>></button>
+
+        <p>Python proqramlaşdırma dilləri arasında ən populyar dillərdən biridir və müxtəlif məqsədlərlə, həm də istifadəçi təcrübəsi səviyyəsinə görə, seçilir.</p>
+      </div>
+    </div>
+    
+  <script>
+    let box = document.getElementsByClassName("box");
+    let sentences = document.querySelectorAll("p");
+let but =document.querySelectorAll("button");
+but[0].addEventListener("click",()=> {
+  sentences[0].style.display="block";
+});
+but[0].addEventListener("dblclick",()=> {
+  sentences[0].style.display="none";
+});
+but[1].addEventListener("click",()=> {
+  sentences[1].style.display="block";
+});
+but[1].addEventListener("dblclick",()=> {
+  sentences[1].style.display="none";
+});
+but[2].addEventListener("click",()=> {
+  sentences[2].style.display="inline-block";
+});
+but[2].addEventListener("dblclick",()=> {
+  sentences[2].style.display="none";
+});
+  </script>
+</body>
+</html>

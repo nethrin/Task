@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 8px;
+			text-align: left;
+		}
+		th {
+			background-color: #ddd;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+		.deleteButton {
+			background-color: red;
+			color: white;
+			border: none;
+			padding: 8px 16px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<button id="addRowButton">Əlavə Et</button>
+	<button id="deleteRowsButton">Sil</button>
+	<table>
+		<thead>
+			<tr>
+				<th>Ad</th>
+				<th>Soyad</th>
+				<th>Yaş</th>
+			</tr>
+		</thead>
+		<tbody id="tableBody">
+			<!-- Table rows will be added dynamically -->
+		</tbody>
+	</table>
+
+	<script>
+		const addRowButton = document.getElementById("addRowButton");
+		const deleteRowsButton = document.getElementById("deleteRowsButton");
+		const tableBody = document.getElementById("tableBody");
+
+		addRowButton.addEventListener("click", function() {
+			
+			const newRow = document.createElement("tr");
+
+			
+			const adCell = document.createElement("td");
+			const soyadCell = document.createElement("td");
+			const yasCell = document.createElement("td");
+
+			
+			const adInput = prompt("Adı Daxil Et:");
+			const soyadInput = prompt("Soyadı Daxil Et:");
+			const yasInput = prompt("Yaşı Daxil Et:");
+
+			
+			adCell.textContent = adInput;
+			soyadCell.textContent = soyadInput;
+			yasCell.textContent = yasInput;
+
+			
+			newRow.appendChild(adCell);
+			newRow.appendChild(soyadCell);
+			newRow.appendChild(yasCell);
+
+            tableBody.appendChild(newRow);
+		});
+
+		deleteRowsButton.addEventListener("click", function() {
+			
+			while (tableBody.firstChild) {
+				tableBody.removeChild(tableBody.firstChild);
+			}
+		});
+	</script>
+</body>
+</html>

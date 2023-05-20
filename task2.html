@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Slider</title>
+	<style>
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(192, 171, 80);
+        }
+		.slider {
+			width: 800px;
+			height: 550px;
+			overflow: hidden;
+			position: relative;
+            margin: auto;
+            padding-top: 100px;
+			
+		}
+		.slider img {
+			position: absolute;
+			top: 5;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+		.slider img.active {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+    <div class="container">
+	<div class="slider">
+		
+		<img src="https://i.pinimg.com/236x/84/f9/bc/84f9bc3a99c8b5fb5d79d586b03c9230.jpg">
+		<img src="https://i.pinimg.com/236x/27/f9/86/27f9867fe9e6ffb265d2c81c7fbcb51a.jpg">
+		<img src="https://i.pinimg.com/236x/22/5a/c1/225ac18b6c073a3d8ee2b89f122b783d.jpg">
+        <img src="https://i.pinimg.com/236x/7a/59/7f/7a597f33fa09bb213050d83f1eb5f6a5.jpg" >
+        <img src="https://i.pinimg.com/236x/d6/3a/e9/d63ae9abd9ed4f15b21e7b7b308f4ac1.jpg" >
+	</div></div>
+	<script>
+		var sliderImages = document.querySelectorAll('.slider img');
+		var currentImageIndex = 0;
+		var slideInterval = setInterval(nextSlide, 2000);
+
+		function nextSlide() {
+			sliderImages[currentImageIndex].classList.remove('active');
+			currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
+			sliderImages[currentImageIndex].classList.add('active');
+		}
+
+
+	</script>
+</body>
+</html>
